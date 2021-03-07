@@ -7,13 +7,13 @@ module.exports = {
     host: process.env.DB_HOST,
     dialect: 'postgres',
     options: {
-      ssl: false
+      ssl: true
     },
     define: {
       timestamps: false
     },
     dialectOptions: {
-      ssl: false,
+      ssl: true,
       useUTC: false,
       dateStrings: true,
       typeCast: function (field, next) {
@@ -39,13 +39,13 @@ module.exports = {
     protocol: 'postgres',
     dialect: 'postgres',
     options: {
-      ssl: false
+      ssl: true
     },
     define: {
       timestamps: false
     },
     dialectOptions: {
-      ssl: false,
+      ssl: true,
       useUTC: false,
       dateStrings: true,
       typeCast: function (field, next) {
