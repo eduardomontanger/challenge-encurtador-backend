@@ -11,6 +11,6 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use('/', routes);
 
-app.listen(process.env.APP_PORT || 8081, function() {
-    console.log("App listening on port " + (process.env.APP_PORT || 8081) +  " !");
+app.listen(process.env.PORT || 8081, function() {
+    console.log("App listening on port " + (process.env.PORT || 8081) +  " !");
 });
