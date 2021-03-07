@@ -8,16 +8,9 @@ const env = process.env.NODE_ENV || 'development';
 const config = require('../../database/config/database.js')[env];
 const db = {};
 
-database = config.development.database;
-username = config.development.username;
-password = config.development.password;
-dialect = config.development.dialect;
-host = config.development.host;
-
-
-const sequelize = new Sequelize(database, username, password, {
-  dialect: dialect,
-  host: host,
+let sequelize = new Sequelize(config.database, config.username, config.password, {
+  dialect: config.dialect,
+  host: config.host,
   port: '5432',
   dialectOptions: {
     ssl: false,
