@@ -9,7 +9,7 @@ module.exports = {
       timestamps: false
     },
     dialectOptions: {
-      ssl: true,
+      ssl: false,
       useUTC: false,
       dateStrings: true,
       typeCast: function (field, next) {
@@ -37,7 +37,7 @@ module.exports = {
       timestamps: false
     },
     dialectOptions: {
-      ssl: true,
+      ssl: false,
       useUTC: false,
       dateStrings: true,
       typeCast: function (field, next) {

@@ -9,11 +9,18 @@ const config = require('../../database/config/database.js')[env];
 const db = {};
 
 let sequelize;
-if (config.use_env_variable) {
-  sequelize = new Sequelize(process.env[config.use_env_variable], config);
-} else {
-  sequelize = new Sequelize(config.database, config.username, config.password, config);
-}
+//sequelize = new Sequelize(config.database, config.username, config.password, config);
+sequelize = new Sequelize(config.database, config.username, config.password, {
+  dialect: config.dialect,
+  host: config.host,
+  port: '5432',
+  dialectOptions: {
+    ssl: false,
+    useUTC: false,
+  },
+  timezone: '-03:00'
+});
+
 
 fs
   .readdirSync(__dirname)
