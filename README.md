@@ -24,7 +24,7 @@ npm run test
 ## Contratos da API
 Abaixo segue a documentação dos contratos da APIs disponíveis no projeto:
 
-[Contratos APIs](/doc/contract-api.yml)
+[Contratos APIs](https://app.swaggerhub.com/apis-docs/eduardomontanger/Challenge-encurtador-backend/1.0.0)
 
 ## Variáveis de ambiente
 
