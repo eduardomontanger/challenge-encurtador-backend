@@ -1,0 +1,60 @@
+swagger: '2.0'
+info:
+  version: '1.0.0'
+  title: Challenge-encurtador-backend
+  description: Este projeto tem por objetivo permitir que se encurte qualquer URL.
+host: localhost:8081
+schemes: [ http, https ]
+consumes:
+- application/json
+produces:
+- application/json
+
+paths:
+  /{codeUrl}:
+    get:
+      description: Este endpoint tem por objetivo, receber o codeURL e redirecionar para a URL mapeada.
+      summary: Endpoint de redirecionamento de URL
+      tags:
+      - APIs
+      parameters:
+      - name: codeUrl
+        in: path
+        required: true
+        type: string
+      responses:
+        200:
+          description: Ok
+        404:
+          description: Not found
+  /encurtador:
+    post:
+      description: Este endpoint tem por objetivo, receber uma URL qualquer e criar uma nova URL encurtada.
+      summary: Endpoint de criação da URL encurtada.
+      tags:
+      - APIs
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/postEncurtador'
+      responses:
+        201:
+          description: Created
+          schema:
+            $ref: '#/definitions/returnEncurtador'
+            
+definitions:
+  postEncurtador:
+    type: object
+    properties:
+      url:
+        type: string
+        example: 'https://wisereducacao.com/'
+  returnEncurtador:
+    type: object
+    properties:
+      newUrl:
+        type: string
+        example: 'http://localhost:8081/A38QS4XF'

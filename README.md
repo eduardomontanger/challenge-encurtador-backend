@@ -4,6 +4,7 @@ Este serviço tem por objetivo encurtar as URLs.
 
 - [Documentação]()
   - [Iniciando aplicação](#iniciando_aplicação)
+  - [Contratos da API](#contratos-da-api)
   - [Variáveis de ambiente](#variaveis_de_ambiente)
   - [Tecnologias/Frameworks](#tecnologias/frameworks)
 
@@ -20,6 +21,10 @@ npm run dev
 npm run test
 ```
 
+## Contratos da API
+Abaixo segue a documentação dos contratos da APIs disponíveis no projeto:
+
+[Contratos APIs](/doc/contract-api.yml)
 
 ## Variáveis de ambiente
 
