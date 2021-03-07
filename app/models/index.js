@@ -8,27 +8,7 @@ const env = process.env.NODE_ENV || 'development';
 const config = require('../../database/config/database.js')[env];
 const db = {};
 
-const sequelize = new Sequelize(config.database, config.username, config.password, {
-  dialect: config.dialect,
-  host: config.host,
-  port: '5432',
-  dialectOptions: {
-    ssl: false,
-    useUTC: false,
-  },
-  timezone: '-03:00'
-});
-
-
-
-//check if Database working
-if (process.env.NODE_ENV == "development") {
-  sequelize.authenticate().then(() => {
-    console.log('INFO - Database connected.')
-  }).catch(err => {
-    console.log('ERROR - Unable to connect to the database:', err)
-  })
-}
+const sequelize = new Sequelize(config);
 
 fs
   .readdirSync(__dirname)
