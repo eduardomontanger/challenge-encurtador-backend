@@ -8,7 +8,7 @@ const env = process.env.NODE_ENV || 'development';
 const config = require('../../database/config/database.js')[env];
 const db = {};
 
-let sequelize = new Sequelize(config.database, config.username, config.password, {
+const sequelize = new Sequelize(config.database, config.username, config.password, {
   dialect: config.dialect,
   host: config.host,
   port: '5432',
@@ -20,17 +20,25 @@ let sequelize = new Sequelize(config.database, config.username, config.password,
 });
 
 
+
+//check if Database working
+if (process.env.NODE_ENV == "development") {
+  sequelize.authenticate().then(() => {
+    console.log('INFO - Database connected.')
+  }).catch(err => {
+    console.log('ERROR - Unable to connect to the database:', err)
+  })
+}
+
 fs
   .readdirSync(__dirname)
-  .filter(file => {
-    return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
-  })
-  .forEach(file => {
-    const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes);
+  .filter(file => (file.indexOf('.') !== 0) && (file !== path.basename(__filename)) && (file.slice(-3) === '.js'))
+  .forEach((file) => {
+    const model = sequelize.import(path.join(__dirname, file));
     db[model.name] = model;
   });
 
-Object.keys(db).forEach(modelName => {
+Object.keys(db).forEach((modelName) => {
   if (db[modelName].associate) {
     db[modelName].associate(db);
   }
