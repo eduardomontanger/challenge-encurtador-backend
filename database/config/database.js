@@ -9,7 +9,15 @@ module.exports = {
       timestamps: false
     },
     dialectOptions: {
-      ssl: false
+      ssl: false,
+      useUTC: false,
+      dateStrings: true,
+      typeCast: function (field, next) {
+        if (field.type === 'DATETIME') {
+          return field.string()
+        }
+        return next()
+      }
     },
   },
   test: {
@@ -29,7 +37,15 @@ module.exports = {
       timestamps: false
     },
     dialectOptions: {
-      ssl: false
+      ssl: false,
+      useUTC: false,
+      dateStrings: true,
+      typeCast: function (field, next) {
+        if (field.type === 'DATETIME') {
+          return field.string()
+        }
+        return next()
+      }
     },
   }
 }
