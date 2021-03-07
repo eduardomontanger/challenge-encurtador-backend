@@ -6,8 +6,7 @@ module.exports = {
     host: process.env.DB_HOST,
     dialect: 'postgres',
     options: {
-      native: true,
-      ssl: true
+      ssl: false
     },
     define: {
       timestamps: false
@@ -38,8 +37,7 @@ module.exports = {
     host: process.env.DB_HOST,
     dialect: 'postgres',
     options: {
-      native: true,
-      ssl: true
+      ssl: false
     },
     define: {
       timestamps: false
