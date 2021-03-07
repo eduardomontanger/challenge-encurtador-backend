@@ -4,7 +4,21 @@ module.exports = {
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DATABASE,
     host: process.env.DB_HOST,
-    dialect: 'postgres'
+    dialect: 'postgres',
+    define: {
+      timestamps: false
+    },
+    dialectOptions: {
+      ssl: false,
+      useUTC: false,
+      dateStrings: true,
+      typeCast: function (field, next) {
+        if (field.type === 'DATETIME') {
+          return field.string()
+        }
+        return next()
+      }
+    },
   },
   test: {
     username: process.env.DB_USERNAME,
@@ -18,6 +32,20 @@ module.exports = {
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DATABASE,
     host: process.env.DB_HOST,
-    dialect: 'postgres'
+    dialect: 'postgres',
+    define: {
+      timestamps: false
+    },
+    dialectOptions: {
+      ssl: false,
+      useUTC: false,
+      dateStrings: true,
+      typeCast: function (field, next) {
+        if (field.type === 'DATETIME') {
+          return field.string()
+        }
+        return next()
+      }
+    },
   }
 }
