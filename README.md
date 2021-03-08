@@ -5,11 +5,11 @@ Este serviço tem por objetivo encurtar as URLs.
 URL PRODUÇÃO: https://sleepy-lowlands-57900.herokuapp.com
 
 - [Documentação]()
-  - [Iniciando aplicação](#iniciando_aplicação)
-  - [Contratos da API](#contratos_da_api)
-  - [Variáveis de ambiente](#variaveis_de_ambiente)
+  - [Iniciando aplicação](#iniciando-aplicação)
+  - [Contratos da API](#contratos-da-api)
+  - [Variáveis de ambiente](#variaveis-de-ambiente)
   - [Tecnologias/Frameworks](#tecnologias/frameworks)
-  - [To do](#to_do)
+  - [To do](#to-do)
 
 ## Iniciando aplicação
 
