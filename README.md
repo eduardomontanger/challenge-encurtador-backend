@@ -2,11 +2,14 @@
 
 Este serviço tem por objetivo encurtar as URLs.
 
+URL PRODUÇÃO: https://sleepy-lowlands-57900.herokuapp.com
+
 - [Documentação]()
   - [Iniciando aplicação](#iniciando_aplicação)
-  - [Contratos da API](#contratos-da-api)
+  - [Contratos da API](#contratos_da_api)
   - [Variáveis de ambiente](#variaveis_de_ambiente)
   - [Tecnologias/Frameworks](#tecnologias/frameworks)
+  - [To do](#to_do)
 
 ## Iniciando aplicação
 
@@ -57,3 +60,10 @@ Abaixo segue a documentação dos contratos da APIs disponíveis no projeto:
     - Sequelize
     - Dotenv
     - Body-parser
+
+### To do
+
+  - Criar dockerfile
+  - Criar docker-compose
+  - Criar testes unitário
+  - Criar estrutura de tratativa de erros.
